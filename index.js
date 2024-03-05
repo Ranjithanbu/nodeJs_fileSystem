@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
 let today;
 
 app.get('/write',(req,res)=>{   
-today=format(new Date(),'dd-MM-yyyy-HH-mm-ss')
+today=format(new Date(),'dd-MM-yyyy-hh-mm-ss')
 console.log(today);
 let filePath=`timeStamp/${today}.txt`
 fs.writeFileSync(filePath,`${today}`,"utf-8")
