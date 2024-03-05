@@ -11,20 +11,29 @@ app.get('/',(req,res)=>{
 });
 
 
-let today;
+
 
 app.get('/write',(req,res)=>{   
-today=format(new Date(),'dd-MM-yyyy-hh-mm-ss')
+let today=format(new Date(),'dd-MM-yyyy-hh-mm-ss')
 console.log(today);
 let filePath=`timeStamp/${today}.txt`
 fs.writeFileSync(filePath,`${today}`,"utf-8")
 })
  app.get('/read',(req,res)=>{
-    let filePath=`timeStamp/${today}.txt`
-    console.log(filePath) 
-const data=fs.readFileSync(filePath,"utf-8")  
 
-res.status(200).send(data)
+    const directoryPath='timeStamp'
+fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+        console.error('Error reading directory:', err);
+        return;
+    }
+    res.status(200).send(files)
+
+});
+
+
+
+
  })
 
 
