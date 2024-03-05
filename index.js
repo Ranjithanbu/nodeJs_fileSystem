@@ -3,7 +3,7 @@ import fs from 'fs';
 import {format} from 'date-fns';
 import { timeStamp } from "console";
 const app=express();
-const PORT=8000;
+const PORT=4000;
 
 
 app.get('/',(req,res)=>{
