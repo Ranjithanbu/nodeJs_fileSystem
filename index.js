@@ -7,7 +7,8 @@ const PORT=4000;
 
 
 app.get('/',(req,res)=>{
-    res.status(200).json({message:"its working"})
+    res.status(200).json({message:"its working",user_guide:{write:"we have to searach like this-- https://nodejs-filesystem-8tzh.onrender.com/write --to add a new time stamp",
+    read:" and we have to put like this --https://nodejs-filesystem-8tzh.onrender.com/read-- to retrieve all timestamps " }})
 });
 
 
